@@ -1,8 +1,12 @@
 extends layout
 
 block content
-  h2 Overdue
-  p.js-ticket-count-overdue
-  h2 Open
-  p.js-ticket-count-open
+  .ticket-count
+    .ticket-count__amount.ticket-count__amount--warning.js-ticket-count-open
+    .ticket-count__text
+      | Tickets
+  .ticket-count
+    .ticket-count__amount.ticket-count__amount--danger.js-ticket-count-overdue
+    .ticket-count__text
+      | Overdue
   script(src='/javascripts/index.js')
