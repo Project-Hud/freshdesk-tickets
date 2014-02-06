@@ -1,12 +1,11 @@
 extends layout
 
 block content
-  .ticket-count
-    .ticket-count__amount.ticket-count__amount--warning.js-ticket-count-open
-    .ticket-count__text
-      | Tickets
-  .ticket-count
-    .ticket-count__amount.ticket-count__amount--danger.js-ticket-count-bug
-    .ticket-count__text
-      | Bugs
+  each type in ticketTypes
+    - var ticket = ticketOptions[type]
+
+    .ticket-count
+      .ticket-count__amount(class='js-ticket-count-' + type + ' ticket-count__amount--' + ticket.class)
+      .ticket-count__text=ticket.name
+
   script(src='/javascripts/index.js')

@@ -28,16 +28,23 @@ if ('development' === app.get('env')) {
 }
 
 var freshdeskUrl = process.env.FRESHDESK_URL
-  , ticketCountTypes = process.env.COUNT_TYPES ? JSON.parse(process.env.COUNT_TYPES) : []
+  , ticketOptions = process.env.COUNT_TYPES ? JSON.parse(process.env.COUNT_TYPES) : []
+  , ticketTypes = Object.keys(ticketOptions)
 
 
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Express' })
+  res.render
+    ( 'index'
+    , { title: 'Freshdesk Tickets'
+      , ticketOptions: ticketOptions
+      , ticketTypes: ticketTypes
+      }
+    )
 })
 
 app.get('/ticket-counts', function (req, res) {
 
-  async.map(ticketCountTypes, function (type, cb) {
+  async.map(ticketTypes, function (type, cb) {
 
     freshdeskTicketCount(freshdeskUrl, type, function (error, count) {
       if (error) return cb(error)
