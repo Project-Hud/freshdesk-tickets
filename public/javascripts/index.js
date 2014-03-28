@@ -24,8 +24,6 @@
 
       document.getElementsByClassName('js-ticket-count')[i].className = document.getElementsByClassName('js-ticket-count')[0].className + countClass
 
-
-      alert(document.getElementsByClassName('js-ticket-count').className)
       i++
     })
   }
