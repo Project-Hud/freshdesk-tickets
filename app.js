@@ -7,7 +7,6 @@ var freshdeskUrl = process.env.FRESHDESK_URL
   , ticketOptions = process.env.COUNT_TYPES ? JSON.parse(process.env.COUNT_TYPES) : []
   , ticketTypes = Object.keys(ticketOptions)
 
-
 widget.get('/', function (req, res) {
   res.render
     ( 'index'

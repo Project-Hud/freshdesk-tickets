@@ -4,8 +4,8 @@ block content
   each type in ticketTypes
     - var ticket = ticketOptions[type]
 
-    .ticket-count
-      .ticket-count__amount(class='js-ticket-count-' + type + ' ticket-count__amount--' + ticket.class)
+    .ticket-count.js-ticket-count
+      .ticket-count__amount(class='js-ticket-count-' + type)
       .ticket-count__text=ticket.name
 
   script(src='/javascripts/index.js')
