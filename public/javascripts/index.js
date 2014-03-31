@@ -17,7 +17,8 @@
 
       $('.js-ticket-count-' + stats.type).html(stats.count)
 
-      $('.js-ticket-count').eq(i).addClass(countClass)
+      if (stats.type === 'overdue')
+        $('.js-ticket-count').eq(i).addClass(countClass)
 
     })
   }
