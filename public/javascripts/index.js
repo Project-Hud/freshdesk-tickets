@@ -9,10 +9,10 @@
     res.forEach(function (stats, i) {
       var countClass = ''
 
-      if (stats.count >= 5) {
+      if (stats.count === 0) {
+        countClass = ' amount--good'
+      } else if (stats.count >= 1) {
         countClass = ' amount--danger'
-      } else if (stats.count >= 3) {
-        countClass = ' amount--warning'
       }
 
       $('.js-ticket-count-' + stats.type).html(stats.count)
