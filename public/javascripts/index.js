@@ -6,25 +6,19 @@
 
     var res = JSON.parse(request.response)
 
-    res.forEach(function (stats) {
-      var i = 0
-      //TEMP DEBUGGING VAR
-      stats.count = 10
+    res.forEach(function (stats, i) {
+      var countClass = ''
 
-      var countClass
-
-      if (stats.count > 5) {
+      if (stats.count >= 5) {
         countClass = ' amount--danger'
-      } else if (stats.count > 3) {
+      } else if (stats.count >= 3) {
         countClass = ' amount--warning'
-      } else {
-        countClass = ' amount--good'
       }
-      document.getElementsByClassName('js-ticket-count-' + stats.type)[0].innerHTML = stats.count
 
-      document.getElementsByClassName('js-ticket-count')[i].className = document.getElementsByClassName('js-ticket-count')[0].className + countClass
+      $('.js-ticket-count-' + stats.type).html(stats.count)
 
-      i++
+      $('.js-ticket-count').eq(i).addClass(countClass)
+
     })
   }
 
