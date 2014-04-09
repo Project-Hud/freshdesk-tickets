@@ -1,46 +1,18 @@
-html
-  height 100%
+//
+// FOUNDATIONS
+// Base HTML and generic site-wide elements
+//
 
-body
-  font 16px
-  font-family 'FS Emeric Book', Helvetica, Arial, sans-serif
-  background-color black
-  color white
-  height 100%
-  margin 0
-  padding 0
+@import 'foundations/normalize'
+@import 'foundations/base'
 
-a
-  color #00B7FF
+//
+// LAYOUT
+//
 
-.ticket-container
-  display table
-  width 100%
-  height 100%
+@import 'layout/widget'
 
-.ticket-count
-  width 50%
-  color #fff
-  text-align center
-  height 100%
-  display table-cell
-  vertical-align middle
-
-.ticket-count__amount
-  width 100%
-  margin 0 auto 0 auto
-  font-size 4.642857143em
-  font-weight bold
-  line-height 100px
-
-
-.ticket-count__text
-  font-size 1.785714286em
-  font-weight 300
-  text-transform uppercase
-
-.amount--danger
-  background-color #d90000
-
-.amount--good
-  background-color #0083f3
+//
+// COMPONENTS
+//
+@import 'components/freshdesk-tickets'
